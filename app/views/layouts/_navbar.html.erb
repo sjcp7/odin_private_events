@@ -1,0 +1,36 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to "Private Events", root_url, class: "navbar-item is-size-4"%>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    
+
+    <div class="navbar-end">
+      <% if logged_in? %>
+        <div class="navbar-item">
+          <%= link_to "Create an event", "#", class: "navbar-item button is-dark" %>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to current_user.username, "#", class: "navbar-link" %>
+          <div class="navbar-dropdown">
+            <%= link_to "Logout", logout_url, method: :delete, class: "navbar-item" %>
+          </div>
+        </div>
+      <% else %>
+        <div class="navbar-item">
+          <div class="buttons">
+            <%= link_to "Sign up", new_user_path, class: "button is-dark" %>
+            <%= link_to "Log in", new_login_url, class: "button is-light" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</nav>
