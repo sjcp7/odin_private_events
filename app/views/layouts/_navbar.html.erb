@@ -15,7 +15,7 @@
     <div class="navbar-end">
       <% if logged_in? %>
         <div class="navbar-item">
-          <%= link_to "Create an event", "#", class: "navbar-item button is-dark" %>
+          <%= link_to "Create an event", new_event_path, class: "navbar-item button is-dark" %>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to current_user.username, "#", class: "navbar-link" %>
