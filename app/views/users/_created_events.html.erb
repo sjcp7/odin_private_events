@@ -1,5 +1,19 @@
-<% @user.events.each do | e |%>
-  <div class="box">
-    <h3><%= e.title %></h3>
+<section class="section">
+  <h3 class="title is-size-4">Upcoming events</h3>
+  <div class="container columns">
+    <% @user.events.upcoming.each do |e| %>
+      <div class="box column is-one-quarter">
+        <h4><%= link_to e.title, event_url(e.id) %></h4>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+  <h3 class="title is-size-4">Previous events</h3>
+  <div class="container columns">
+    <% @user.events.previous.each do |e| %>
+      <div class="box column is-one-quarter">
+        <h4><%= link_to e.title, event_url(e.id) %></h4>
+      </div>
+    <% end %>
+  </div>
+</section>
