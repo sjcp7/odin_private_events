@@ -1,6 +1,12 @@
 <section class="section">
-  <div class="container">
-    <div class="box">
+  <div class="columns container">
+    <div class="column panel is-one-fifth is-offset-1">
+      <p class="panel-heading">Attendees</p>
+      <% @event.attendees.each do |a| %>
+        <%= link_to a.username, user_url(a.id), class: "panel-block" %>
+      <% end %>
+    </div>
+    <div class="column box is-three-fifths">
       <h1 class="title"><%= @event.title %></h1>
       <h2 class="subtitle">Creator: <%= @event.creator.username %></h2>
       <p><%= @event.description %></p>
