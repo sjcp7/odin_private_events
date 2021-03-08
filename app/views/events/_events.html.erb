@@ -1,6 +1,6 @@
 <% @events.each do |e| %>
   <div class="box">
-    <h2 class="title"><%= e.title %></h2>
+    <%= link_to e.title, event_url(e.id), class: "is-size-4" %>
     <p><%= e.description %></p>
     <h3><%= e.date %></h3>
   </div>
