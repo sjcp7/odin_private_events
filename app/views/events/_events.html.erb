@@ -2,6 +2,7 @@
   <div class="box">
     <%= link_to e.title, event_url(e.id), class: "is-size-4" %>
     <p><%= e.description %></p>
+    <h3><%= e.location %></p>
     <h3><%= e.date %></h3>
   </div>
 <% end %>
