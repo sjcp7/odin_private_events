@@ -1,8 +1,19 @@
-<% @events.each do |e| %>
-  <div class="box">
-    <%= link_to e.title, event_url(e.id), class: "is-size-4" %>
-    <p><%= e.description %></p>
-    <h3><%= e.location %></p>
-    <h3><%= e.date %></h3>
+<section class="section">
+  <h3 class="title is-size-4">Upcoming events</h3>
+  <div class="container columns">
+    <% Event.upcoming.each do |e| %>
+      <div class="box column is-one-quarter">
+        <h4><%= link_to e.title, event_url(e.id) %></h4>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+  <h3 class="title is-size-4">Previous events</h3>
+  <div class="container columns">
+    <% Event.previous.each do |e| %>
+      <div class="box column is-one-quarter">
+        <h4><%= link_to e.title, event_url(e.id) %></h4>
+      </div>
+    <% end %>
+  </div>
+</section>
