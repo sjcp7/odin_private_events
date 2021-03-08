@@ -20,6 +20,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <%= link_to current_user.username, "#", class: "navbar-link" %>
           <div class="navbar-dropdown">
+            <%= link_to "My profile", user_url(current_user.id), class: "navbar-item" %>
             <%= link_to "Logout", logout_url, method: :delete, class: "navbar-item" %>
           </div>
         </div>
